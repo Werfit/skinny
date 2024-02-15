@@ -2,6 +2,7 @@ import { Form } from "../../form/form.component.tsx";
 
 export const Poll = () => (
   <Form
+    className="w-1/2 h-[50vh] -translate-y-1/2 mx-auto shadow-white shadow-2xl"
     formId={1}
     formObj={{
       settings: {

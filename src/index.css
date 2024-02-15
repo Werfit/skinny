@@ -6,3 +6,11 @@ body {
   margin: 0 !important;
   height: 100%;
 }
+
+.text-shadow {
+  text-shadow: 0 0 1rem white;
+}
+
+.small-shadow {
+  box-shadow: 0px 0px 0.2rem theme("colors.gray.400");
+}

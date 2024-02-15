@@ -3,16 +3,15 @@ import { FormObj } from "@quillforms/renderer-core/build-types/types";
 export const FORM_BLOCKS: FormObj["blocks"] = [
   {
     name: "welcome-screen",
-    id: "jg1401r",
+    id: "welcome-screen",
     attributes: {
       label: "Weight loss made easy with a prescription to semaglutide",
       description: "Lose up to 1.5% of your body fat per week",
-      classnames: "bg-cyan-500",
     },
   },
   {
     name: "email",
-    id: "iqfrqwr13r",
+    id: "email",
     attributes: {
       required: true,
       label: "What's your email address?",
@@ -21,9 +20,10 @@ export const FORM_BLOCKS: FormObj["blocks"] = [
     },
   },
   {
-    name: "dropdown",
-    id: "3nsdf934",
+    name: "radio-button",
+    id: "dropdown",
     attributes: {
+      required: true,
       label: "What was your gender assigned at birth?",
       description: "Please select your sex",
       choices: [
@@ -40,7 +40,7 @@ export const FORM_BLOCKS: FormObj["blocks"] = [
   },
   {
     name: "date",
-    id: "a213rsew",
+    id: "date",
     attributes: {
       required: true,
       label: "What is your date of birth",
@@ -48,90 +48,88 @@ export const FORM_BLOCKS: FormObj["blocks"] = [
     },
   },
   {
-    name: "short-text",
-    id: "kd12edg",
+    id: "bmi",
+    name: "group",
     attributes: {
-      attachment: {
-        type: "image",
-        url: "https://quillforms.com/wp-content/uploads/2022/10/ludovic-migneault-B9YbNbaemMI-unsplash_50-scaled.jpeg",
+      label:
+        "What is your height and current weight! This will help us calculate your BMI and macronutrients.",
+      description: "Please enter your height and weight below",
+    },
+    innerBlocks: [
+      {
+        id: "asfijais1e",
+        name: "number",
+        attributes: {
+          label: "Feet",
+          required: true,
+          layout: "split-left",
+        },
       },
-      layout: "split-right",
-      required: true,
-      label: "Let's start with your name",
-    },
+      {
+        id: "7dsjsdv821",
+        name: "number",
+        attributes: {
+          label: "Inches",
+          required: true,
+          layout: "split-right",
+          placeholder: "4",
+        },
+      },
+      {
+        id: "2esad013x",
+        name: "number",
+        attributes: {
+          label: "Currently weight (lbs.)",
+          required: true,
+          placeholder: "195",
+        },
+      },
+    ],
   },
   {
-    name: "slider",
-    id: "93pda11",
+    name: "radio-button",
+    id: "weight-loss",
     attributes: {
-      label: "Please choose your donation amount!",
-      min: 0,
-      max: 100,
-      step: 1,
-      prefix: "$",
-      suffix: ",000",
-    },
-  },
-  {
-    name: "number",
-    id: "wer3qdkdb",
-    attributes: {
-      required: true,
-      label: "Great {{field:kdsfkdg}}, can you type your age?",
-    },
-  },
-  {
-    name: "long-text",
-    id: "m35612edg",
-    attributes: {
-      required: true,
-      label: "Type a brief about yourself!",
-    },
-  },
-  {
-    name: "multiple-choice",
-    id: "gqr1294c",
-    attributes: {
-      required: true,
-      multiple: true,
-      verticalAlign: false,
-      label: "Which subjects do you love the most?",
+      label: "Are you here to be evaluated for weight loss",
+      description:
+        "All responses will be evaluated by a board-certified physician. Medication may be prescribed for appropriate candidates.",
       choices: [
         {
-          label: "Physics",
-          value: "physics",
+          label: "Yes",
+          value: "yes",
         },
         {
-          label: "Math",
-          value: "math",
-        },
-        {
-          label: "English",
-          value: "english",
-        },
-        {
-          label: "Biology",
-          value: "biology",
+          label: "No",
+          value: "no",
         },
       ],
     },
   },
   {
-    name: "statement",
-    id: "g91imf1023",
+    name: "radio-button",
+    id: "attempts",
     attributes: {
-      label: "You are doing great so far!",
-      buttonText: "Continue",
-      quotationMarks: true,
+      label:
+        "Have you ever attempted to lose weight in a weight management program?",
+      description:
+        "Examples may include caloric restrictions through diet, exercise, or behaviour modification.",
+      choices: [
+        {
+          label: "Yes",
+          value: "yes",
+        },
+        {
+          label: "No",
+          value: "no",
+        },
+      ],
     },
   },
   {
-    name: "website",
-    id: "bv91em9123",
+    name: "progress-bar",
+    id: "progress-bar",
     attributes: {
-      required: true,
-      multiple: true,
-      label: "Please insert your website url!",
+      label: "Checking Doctor & Stock Availability",
     },
   },
 ];
